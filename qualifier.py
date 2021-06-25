@@ -36,13 +36,13 @@ def make_table(rows: List[List[Any]], labels: Optional[List[Any]] = None, center
     max_col_len: dict[int, int] = {}
     for i, row in enumerate(rows):
         for j, col in enumerate(row):
-            max_col_len[j] = len(str(col))+2 if i == 0 else max(
-                max_col_len[j], len(str(col))+2)
+            max_col_len[j] = len(str(col)) + 2 if i == 0 else max(
+                max_col_len[j], len(str(col)) + 2)
 
     # consider label size of maximum item size
     if labels:
         for i, col in enumerate(labels):
-            max_col_len[j] = max(max_col_len[j], len(str(col))+2)
+            max_col_len[i] = max(max_col_len[i], len(str(col)) + 2)
 
     # generate top border of the table
     for i, val in max_col_len.items():
